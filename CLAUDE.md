@@ -3,29 +3,31 @@
 <!-- Keep this file short. It loads into every session. Put detail in docs/ and link to it. -->
 
 ## Project
-**Claude Deck**: [One sentence on what this is and who it's for.]
+**Claude Deck**: a free Stream Deck (Neo) plugin that shows the owner's running Claude Code sessions and lets them allow or deny permission requests from the deck, fed by Claude Code hooks.
 Full product context: `docs/prd.md`. Current status and next step: `docs/state.md`.
 
 ## Commands
 ```bash
-# Build:   [e.g. dotnet build]
-# Test:    [e.g. dotnet test]
-# Run:     [e.g. dotnet run --project src/Api]
-# Lint:    [e.g. dotnet format --verify-no-changes]
+# Build:   npm run build                     # (expected, verify once scaffolded) Rollup bundle into the .sdPlugin folder
+# Test:    npm test                          # (expected, verify once scaffolded) Vitest
+# Run:     npm run watch                     # (expected, verify once scaffolded) rebuild + restart plugin; first time: npx streamdeck link <id>.sdPlugin
+# Lint:    npm run lint                      # (expected, verify once scaffolded) ESLint + tsc --noEmit
+# Pack:    npx streamdeck pack <id>.sdPlugin  # (expected, verify once scaffolded) .streamDeckPlugin installer
 # Check: ./scripts/check.sh               # format, lint, test, build; the one definition of green
 # Board: python3 scripts/dashboard.py --open   # live, read-only view of every feature
 ```
 
 ## Stack
-[e.g. .NET 9 / C#, SQL Server, Angular 19. Keep to one or two lines; the why lives in docs/adr/.]
+TypeScript on Elgato's `@elgato/streamdeck` SDK (Node, npm, Rollup via `@elgato/cli`), Vitest. Claude Code `http` hooks POST to a localhost server inside the plugin. Why: `docs/adr/0002-typescript-elgato-sdk-http-hooks.md`.
 
 ## Conventions
 <!-- Top 5 or so rules Claude would otherwise get wrong. Delete what doesn't apply. -->
-- [Folder layout / where new code goes]
-- [Naming conventions]
-- [Error handling pattern]
-- [Data access pattern]
-- Never commit secrets. Config goes in [appsettings.Development.json / .env], both gitignored.
+- Core logic (session state, request queue, hook-settings merging) lives in plain TypeScript modules under `src/core/` with no Stream Deck or HTTP imports, so it unit-tests without the app. `src/actions/` holds thin Stream Deck actions; `src/server/` the localhost hook server.
+- Naming: camelCase for code; Claude Code's hook JSON keeps its own snake_case (`session_id`, `tool_name`) at the boundary only, converted when parsed.
+- Fail open to Claude: if the plugin can't decide (no key pressed, error, timeout), return no decision so Claude shows its normal prompt. Never auto-allow and never auto-deny.
+- Only touch `~/.claude/settings.json` entries the plugin owns (marked by its hook URL); keep everything else byte-for-byte, and back the file up before the first write.
+- Bind the hook server to `127.0.0.1` only. Never commit the per-install token; it lives in the plugin's global settings.
+- Never commit secrets.
 
 ## Temporary files
 - Name throwaway files in the repo `<name>.tmp.<ext>` (gitignored by `*.tmp.*`).

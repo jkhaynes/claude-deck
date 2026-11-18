@@ -9,3 +9,4 @@ One file per significant decision: why this library, this data store, this patte
 | # | Title | Status | Date |
 |---|-------|--------|------|
 | 0001 | [Record architecture decisions](0001-record-architecture-decisions.md) | Accepted | 2026-11-17 |
+| 0002 | [TypeScript plugin on the Elgato SDK, fed by Claude Code HTTP hooks](0002-typescript-elgato-sdk-http-hooks.md) | Accepted | 2026-11-17 |

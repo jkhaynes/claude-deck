@@ -53,11 +53,11 @@ Capability #1 is first: it is the smallest piece that delivers the core value an
 - Hardware: Stream Deck Neo (8 LCD keys; the info bar and touch points can't be drawn on by plugins). Stream Deck app 7.6.
 - Must be free: Elgato SDK and CLI, Node.js, and GitHub Actions on a public repo are all free.
 - Assumption: Claude Code's `PermissionRequest` hook can allow or deny a request, and an unreachable HTTP hook is a non-blocking error, so Claude shows its normal prompt. (Confirmed from the hooks docs on 2026-11-17.)
-- Assumption (unverified): `PermissionRequest` hooks run for sessions in the Claude desktop app's Code tab, not just the terminal CLI. If not, v1 is terminal-only.
+- `PermissionRequest` HTTP hooks run for sessions in the Claude desktop app's Code tab and their allow/deny is obeyed. The app's own prompt shows at the same time, and whichever is answered first wins. (Confirmed by spike, `docs/spikes/2026-11-17-desktop-app-hooks.md`.)
 - Claude Code must be installed natively on Windows; WSL keeps its settings in a different home folder.
 
 ## Open Questions
-- [ ] Does the `PermissionRequest` hook fire, and is its decision honored, for sessions in the Claude desktop app? (Spike this before building capability #1 in full.)
+- [x] Does the `PermissionRequest` hook fire, and is its decision honored, for sessions in the Claude desktop app? Yes (spike, 2026-11-17).
 - [ ] How much of the request should the deck show before you tap: just session and tool name, or enough of the command to decide without looking at the screen? (Asked during setup; not yet answered.)
 - [ ] When the Neo has more sessions than free keys, which sessions get a key?
 - [ ] Should a request time out to "ask in the app" after a while, or wait as long as Claude allows?

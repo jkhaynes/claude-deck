@@ -18,6 +18,8 @@ flowchart LR
     Inst[Hook installer] -- edits --> Settings[(~/.claude/settings.json)]
 ```
 
+Two details from the 2026-11-17 spike (`docs/spikes/2026-11-17-desktop-app-hooks.md`): `SessionStart` only accepts `command` hooks, so that one event reaches the server through a one-line `curl` command hook; and in the desktop app the normal permission prompt races the deck, so a pending request can be answered in the app and the deck must clear it.
+
 ## Components
 | Component | Responsibility | Location | Tech |
 |-----------|----------------|----------|------|

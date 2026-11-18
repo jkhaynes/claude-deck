@@ -1,7 +1,7 @@
 # 0001. Record architecture decisions
 
 **Status:** Accepted
-**Date:** [DATE]
+**Date:** 2026-11-17
 
 ## Context
 Decisions made during AI-assisted coding sessions are easy to lose once the session ends, and agents working on this repo later need the reasoning behind the code, not just the code.

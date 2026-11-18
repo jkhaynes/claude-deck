@@ -1,4 +1,4 @@
-# [PROJECT_NAME] Constitution
+# Claude Deck Constitution
 <!-- Starter constitution from the project template. Run /speckit-constitution to tailor it to this project; it will fill the bracketed placeholders and bump the version. -->
 <!-- Starter 0.2.0: every change passes scripts/check and every review finding is fixed or answered in the PR. Principle III: each feature in its own worktree under .worktrees/, guide in docs/worktrees.md. -->
 
@@ -35,4 +35,4 @@ Architectural decisions (libraries, data stores, patterns, notable trade-offs) a
 
 This constitution supersedes other practice docs when they conflict. Amendments are made through `/speckit-constitution`, with the version bumped (MAJOR for removed or redefined principles, MINOR for added ones, PATCH for wording) and a short note of what changed.
 
-**Version**: 0.2.0 | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
+**Version**: 0.2.0 | **Ratified**: 2026-11-17 | **Last Amended**: 2026-11-17

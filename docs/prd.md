@@ -1,8 +1,8 @@
-# [PROJECT_NAME] Product Requirements
+# Claude Deck Product Requirements
 
 <!-- Product-level PRD: the whole thing, not one feature. Individual features get their own spec via /speckit-specify in specs/. Keep this to what stays true across features. -->
 
-**Status:** Draft | **Last updated:** [DATE]
+**Status:** Draft | **Last updated:** 2026-11-17
 
 ## Problem
 [What problem exists today, for whom, and why current options fall short.]

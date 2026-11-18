@@ -1,8 +1,8 @@
-# [PROJECT_NAME] Architecture
+# Claude Deck Architecture
 
 <!-- The current shape of the system across all features. Per-feature technical detail lives in specs/NNN-*/plan.md. The "why" behind choices lives in docs/adr/. Update this when components or their connections change. -->
 
-**Last updated:** [DATE]
+**Last updated:** 2026-11-17
 
 ## Overview
 [Two or three sentences: what the major pieces are and how a request flows through them.]

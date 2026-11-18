@@ -3,7 +3,7 @@
 <!-- Keep this file short. It loads into every session. Put detail in docs/ and link to it. -->
 
 ## Project
-**[PROJECT_NAME]**: [One sentence on what this is and who it's for.]
+**Claude Deck**: [One sentence on what this is and who it's for.]
 Full product context: `docs/prd.md`. Current status and next step: `docs/state.md`.
 
 ## Commands

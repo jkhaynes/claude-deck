@@ -2,7 +2,7 @@
 
 <!-- Session-to-session memory. Claude updates this at the end of each working session. Keep it short: replace old content instead of appending forever. The exception is Escaped bugs, a running log. -->
 
-**Last updated:** [DATE]
+**Last updated:** 2026-11-17
 
 ## Current Focus
 [Feature or task in progress, e.g. specs/002-price-alerts, task T014]

@@ -8,4 +8,4 @@ One file per significant decision: why this library, this data store, this patte
 
 | # | Title | Status | Date |
 |---|-------|--------|------|
-| 0001 | [Record architecture decisions](0001-record-architecture-decisions.md) | Accepted | [DATE] |
+| 0001 | [Record architecture decisions](0001-record-architecture-decisions.md) | Accepted | 2026-11-17 |

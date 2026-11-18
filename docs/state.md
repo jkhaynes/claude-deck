@@ -8,6 +8,7 @@
 Project setup complete; constitution next.
 
 ## Recently Done
+- Mockup of the Claude profile on the Neo reviewed (https://claude.ai/artifact/9UJTD3U3GYD34ViEbFM1AC): top row one status key per session; bottom row request key (session, tool, start of command), Allow, Deny, back to Default. Owner chose tool + command for the request key.
 - Spike: desktop-app sessions fire `PermissionRequest` HTTP hooks and obey allow/deny; app prompt and hook race; `SessionStart` needs a command hook (`docs/spikes/2026-11-17-desktop-app-hooks.md`)
 - Stack chosen: TypeScript + Elgato SDK + Claude Code HTTP hooks (ADR 0002)
 - PRD drafted (many items marked "(proposed)": the owner said "just dive in")
@@ -20,7 +21,6 @@ Project setup complete; constitution next.
 
 ## Blockers / Open Questions
 - How the plugin learns a pending request was answered in the app instead (connection close? next `PostToolUse`?) needs designing in capability #1.
-- How much of a pending request the keys should show is still undecided (see PRD).
 
 ## Escaped bugs
 <!-- Bugs that reached main. Each gets a regression test (red first) and, if a reviewer should have caught it, a line in REVIEW.md's Learned review rules. -->

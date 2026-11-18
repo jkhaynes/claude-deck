@@ -34,7 +34,7 @@ When several Claude Code sessions run at once, the owner has to keep switching w
 <!-- High level. Each one usually becomes one or more Spec Kit features. Release (v1 / v2 / later) keeps future ideas in the list without building them yet. -->
 | # | Capability | Release | Priority | Spec |
 |---|------------|---------|----------|------|
-| 1 | Approve or deny a pending permission request from the deck (Allow / Deny keys; the pending request shows which session and tool) | v1 | Must | not started |
+| 1 | Approve or deny a pending permission request from the deck (Allow / Deny keys; a request key shows the session, tool and start of the command, oldest request first) | v1 | Must | not started |
 | 2 | Hook setup: the plugin adds its hooks to `~/.claude/settings.json` on first run and removes them cleanly, leaving the owner's other hooks untouched | v1 | Must | not started |
 | 3 | Session status keys: one key per running session, labeled with its project folder, colored by state (working, needs approval, waiting for input, done, idle) | v1 | Must | not started |
 | 4 | A bundled "Claude" profile for the Neo, and switching to it automatically when an approval is pending (proposed) | v1 | Should | not started |
@@ -58,6 +58,6 @@ Capability #1 is first: it is the smallest piece that delivers the core value an
 
 ## Open Questions
 - [x] Does the `PermissionRequest` hook fire, and is its decision honored, for sessions in the Claude desktop app? Yes (spike, 2026-11-17).
-- [ ] How much of the request should the deck show before you tap: just session and tool name, or enough of the command to decide without looking at the screen? (Asked during setup; not yet answered.)
+- [x] How much of the request should the deck show before you tap? Session, tool, and the start of the command (about 30 characters at real key size), so most requests can be decided without looking at the screen. (Owner, 2026-11-17, after the mockup.)
 - [ ] When the Neo has more sessions than free keys, which sessions get a key?
 - [ ] Should a request time out to "ask in the app" after a while, or wait as long as Claude allows?
